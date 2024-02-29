@@ -3,7 +3,7 @@ import { AmqpLibPort } from "../../shared/broker/infraestructure/ports/AmqpLib";
 import { CreateOrderService } from "../application/services/createOrder.service";
 import { CreateOrderController } from "./controllers/createOrder.controller";
 
-const amqpLibPort = new AmqpLibPort("localhost");
+const amqpLibPort = new AmqpLibPort("");
 
 const sendMessageService = new SendMessageService(amqpLibPort);
 

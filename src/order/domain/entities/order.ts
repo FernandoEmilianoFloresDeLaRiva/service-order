@@ -1,4 +1,4 @@
 export interface OrderInterface {
-    name : string;
-    price : number;
+  name: string;
+  price: number;
 }
