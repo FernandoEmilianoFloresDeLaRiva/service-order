@@ -35,7 +35,9 @@ export class AmqpLibPort implements BrokerRepository {
     try {
       const channel = await this.createChannel();
       await channel.assertQueue(queueName);
-      channel.sendToQueue(queueName, Buffer.from(JSON.stringify(content)));
+      channel.sendToQueue(queueName, Buffer.from(JSON.stringify(content)), {
+        persistent: true,
+      });
       console.log("message send: " + content);
     } catch (err: any) {
       throw new Error(err);
