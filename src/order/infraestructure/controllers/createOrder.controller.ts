@@ -5,7 +5,7 @@ export class CreateOrderController {
   constructor(private readonly createOrderService: CreateOrderService) {}
   async run(req: Request, res: Response) {
     try {
-      const order = req.body;
+      const order = { name: "pan", price: 10 };
       const result = await this.createOrderService.run(order);
       res.status(201).send(result);
     } catch (err: any) {
